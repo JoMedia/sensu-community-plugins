@@ -38,7 +38,7 @@ class Mailer < Sensu::Handler
 
   def handle
     admin_gui = settings['mailer']['admin_gui'] || 'http://localhost:8080/'
-    basename=File.basename($0,File.extname($0))
+    basename = File.basename($0,File.extname($0))
     mail_to = settings[basename]['mail_to']
     mail_from =  settings['mailer']['mail_from']
 
