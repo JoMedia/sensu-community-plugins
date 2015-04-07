@@ -16,7 +16,7 @@ def main():
     errors = []
     for vpn_connection in conn.get_all_vpn_connections():
         for tunnel in vpn_connection.tunnels:
-            if tunnel.status != 'UP':
+            if tunnel.status != 'PHASE_2_SUCCESS':
                 errors.append("[gateway: %s connection: %s tunnel: %s status: %s]" % (vpn_connection.vpn_gateway_id, vpn_connection.id, tunnel.outside_ip_address, tunnel.status))
 
     if len(errors) > 1:
